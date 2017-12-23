@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+   <ThingDef Name="BaseFlame" Abstract="True">
+    <category>Projectile</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <thingClass>Bullet</thingClass>
+    <label>potato</label>
+    <useHitPoints>False</useHitPoints>
+    <neverMultiSelect>True</neverMultiSelect>
+    <graphicData>
+      <shaderType>Transparent</shaderType>
+    </graphicData>
+  </ThingDef> 
+  
+   
+  <ThingDef ParentName="BaseFlame">
+    <defName>Flame_FlameThrower</defName>
+    <label>flamethrower flame</label>
+    <graphicData>
+      <texPath>Things/Mote/FireGlow</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+	  <damageDef>Flame</damageDef>
+	  <damageAmountBase>2</damageAmountBase>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+      <speed>40</speed>
+    </projectile>
+  </ThingDef>
+  
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_FlameThrower</defName>
+    <label>flame thrower</label>
+    <description>Sets things on fire, using the power of fire.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/FlameThrower</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>InteractRifle</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>Gunsmithing</researchPrerequisite>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>44444</WorkToMake>
+      <Mass>4</Mass>
+      <AccuracyTouch>0.95</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.50</AccuracyLong>
+      <RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+      <Weapon_Bulk>2.0</Weapon_Bulk>
+    </statBases>
+    <costList>
+      <Steel>60</Steel>
+	  <Chemfuel>50</Chemfuel>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Flame_FlameThrower</defaultProjectile>
+        <warmupTime>3.0</warmupTime>
+        <range>20</range>
+        <forcedMissRadius>1</forcedMissRadius>
+        <burstShotCount>60</burstShotCount>
+        <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+        <soundCast>FlameThrowerWhoosh</soundCast>
+        <!--<soundCastTail>FlameThrowerWhoosh</soundCastTail>-->
+		<!--<soundCastTail>GunTail_Light</soundCastTail>-->
+        <muzzleFlashScale>5</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>1.8</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>1.9</cooldownTime>
+      </li>
+    </tools>
+    <weaponTags>
+      <li>FlameThrower</li>
+    </weaponTags>
+  </ThingDef>
+  
+</Defs>

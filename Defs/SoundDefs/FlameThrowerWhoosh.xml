@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SoundDef>
+    <defName>FlameThrowerWhoosh</defName>  
+    <context>MapOnly</context>
+    <eventNames />  
+    <maxSimultaneous>10</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipPath>FlameThrower/FlameThrowerWhoosh</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>77.05883</min>        
+          <max>77.05883</max>
+        </volumeRange>      
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>
